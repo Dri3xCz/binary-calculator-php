@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app: 
+    build: 
+      context: .
+    working_dir: /var/www/html
+    ports:
+      - "5000:80"
+    volumes:
+      - "./app:/var/www/html"
+    environment:
+      SITE_URL: localhost
+        
