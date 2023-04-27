@@ -34,6 +34,12 @@
         $res = 0;
         for ($i = 0; $i < sizeof($arr); $i++) {
             $res += pow(2, $i) * $arr[$i];
+            echo pow(2, $i);
+            echo " * ";
+            echo $arr[$i];
+            if($i == sizeof($arr) - 1) {
+                echo "<br>";
+            } else echo " + ";
         }
         echo $res;
     }
@@ -61,10 +67,13 @@
         $i = 0;
         while ($num >= 1) {
             $mod = $num % 2;
+            echo $num . " % 2  = " . $mod . " , ";
             $finalArr[$i] = $mod;
             $num = $num / 2;
+            $num = floor($num);
             $i++;
         }
+        echo "<br>";
         $res = array_reverse($finalArr);    
         for ($i = 0; $i < sizeof($res); $i++) {
             echo $res[$i];
